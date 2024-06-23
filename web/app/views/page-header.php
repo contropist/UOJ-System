@@ -152,7 +152,7 @@
     			}
 			});
 		</script>
-		<script src="//cdn.bootcss.com/mathjax/2.6.0/MathJax.js?config=TeX-AMS_HTML"></script>
+		<script src="//cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
 		<?php endif ?>
 		
 		<?php if (isset($REQUIRE_LIB['jquery.form'])): ?>
@@ -192,16 +192,26 @@
 		<?= HTML::js_src('/js/raphael.min.js') ?>
 		<?php endif ?>
 		
-		<?php if (isset($REQUIRE_LIB['shjs'])): ?>
-		<!-- shjs -->
-		<?= HTML::css_link('/css/sh_typical.min.css') ?>
-		<?= HTML::js_src('/js/sh_main.min.js') ?>
-		<script type="text/javascript">$(document).ready(function(){sh_highlightDocument()})</script>
+		<?php if (isset($REQUIRE_LIB['hljs'])): ?>
+		<!-- hljs -->
+		<?= HTML::css_link('/css/highlight_github.css') ?>
+		<?= HTML::js_src('/js/highlight.min.js') ?>
+		<script type="text/javascript">$(document).ready(function(){hljs.highlightAll()})</script>
 		<?php endif ?>
 		
 		<?php if (isset($REQUIRE_LIB['ckeditor'])): ?>
 		<!-- ckeditor -->
 		<?= HTML::js_src('/js/ckeditor/ckeditor.js') ?>
+		<?php endif ?>
+
+		<?php if (isset($REQUIRE_LIB['dracula'])): ?>
+			<!-- dracula.js -->
+			<?= HTML::js_src('/js/dracula.min.js') ?>
+		<?php endif ?>
+
+		<?php if (isset($REQUIRE_LIB['base64'])): ?>
+			<!-- base64.js -->
+			<?= HTML::js_src('/js/base64.min.js') ?>
 		<?php endif ?>
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
